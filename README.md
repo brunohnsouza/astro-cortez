@@ -1,4 +1,4 @@
-# Amivet
+# AmiVet
 
 Landing page desenvolvida para a clínica veterinária fictícia Amivet, com informações sobre a clínica, equipe, serviços, e um formulário de agendamento de consultas.
 

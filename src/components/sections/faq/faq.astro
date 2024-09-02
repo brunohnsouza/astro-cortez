@@ -1,0 +1,80 @@
+---
+import { Button } from "@/components/ui/button";
+import { Badge } from "../../ui/badge";
+import { FaqAccordion } from "./faq-accordion";
+import WhatsAppIcon from "@/icons/whatsapp";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const badgeContent = "FAQ";
+const titleContent = "Perguntas e respostas mais frequentes";
+
+const whastsappCardTitle = "Ainda há dúvidas?";
+const whatsappCardParagraph = "Envie uma mensagem, estamos à disposição";
+
+const buttonText = "Chamar no WhatsApp";
+---
+
+<div class="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
+  <div
+    class="flex flex-col justify-start gap-4 text-center md:text-start max-w-[600px] mx-auto"
+  >
+    <Badge
+      className="mx-auto md:mx-0 max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
+      variant="outline">{badgeContent}</Badge
+    >
+
+    <h2
+      class="text-3xl sm:text-4xl capitalize text-foreground font-extrabold tracking-wide"
+    >
+      {titleContent}
+    </h2>
+  </div>
+
+  <div class="space-y-16">
+    <FaqAccordion client:load />
+
+    <Card
+      className="flex items-start flex-col lg:flex-row lg:items-center gap-4 rounded-lg p-6"
+    >
+      <CardHeader className="p-0">
+        <WhatsAppIcon className="size-8 shrink-0" />
+      </CardHeader>
+
+      <CardContent className="p-0 flex-1">
+        <CardTitle
+          className="text-secondary-foreground font-bold text-lg tracking-wide"
+        >
+          {whastsappCardTitle}
+        </CardTitle>
+        <CardDescription
+          className="text-base text-secondary-foreground/70 tracking-wide"
+        >
+          {whatsappCardParagraph}
+        </CardDescription>
+      </CardContent>
+
+      <CardFooter className="p-0 w-full lg:max-w-max">
+        <a
+          aria-label="Chat on WhatsApp"
+          href="https://wa.me/1XXXXXXXXXX"
+          target="_blank"
+          class="w-full"
+          rel="noopener noreferrer"
+        >
+          <Button
+            className="capitalize font-semibold text-base w-full tracking-wide bg-[#04D361] text-secondary hover:bg-[#04D361]/90 transition-colors"
+          >
+            {buttonText}
+          </Button>
+        </a>
+      </CardFooter>
+    </Card>
+  </div>
+</div>

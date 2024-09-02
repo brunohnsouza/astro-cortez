@@ -1,0 +1,72 @@
+---
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+
+const pictures = [
+  {
+    grid: "row-span-2 col-span-1",
+    src: "/sections/about/img-1.webp",
+    alt: "Imagem um veterinário, com pele clara e cabelos castanhos, utilizando um estetoscópio para ouvir o coração de um cachorrinho com pelos dourados.",
+  },
+  {
+    grid: "row-span-1 col-span-1",
+    src: "/sections/about/img-2.webp",
+    alt: "Imagem um veterinário, com pele clara e cabelos castanhos, verificando fisicamente um cachorrinho com pelos dourados.",
+  },
+  {
+    grid: "row-span-1 col-span-1",
+    src: "/sections/about/img-3.webp",
+    alt: "Imagem um veterinário, com pele clara e cabelos castanhos, ouvindo atentamente sua cliente e dona do cachorrinho com pelos dourados.",
+  },
+];
+
+const badgeContent = "Sobre Nós";
+const titleContent = "Cuidando dos Seus Melhores Amigos com Amor e Expertise";
+const paragraphContent =
+  "Na nossa clínica veterinária, entendemos o vínculo especial entre você e seu animal de estimação. Com uma equipe apaixonada e experiente, oferecemos cuidados compassivos e personalizados para garantir que seu animal receba a atenção que merece.";
+const buttonText = "Marcar consulta";
+---
+
+<div
+  class="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16"
+>
+  <div class="grid grid-cols-2 gap-4 order-2 md:order-1">
+    {
+      pictures.map(({ grid, src, alt }) => (
+        <div class={`${grid} overflow-hidden rounded-md border`}>
+          <img
+            src={src}
+            alt={alt}
+            class="w-full h-full object-cover aspect-auto"
+            loading="lazy"
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="flex flex-col gap-6 order-1 md:order-2">
+    <Badge
+      className="max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
+      variant="outline">{badgeContent}</Badge
+    >
+
+    <h2
+      class="text-3xl sm:text-4xl capitalize text-foreground font-extrabold tracking-wide"
+    >
+      {titleContent}
+    </h2>
+
+    <p class="text-secondary-foreground/70 tracking-wide my-2">
+      {paragraphContent}
+    </p>
+
+    <a href="#contact" class="w-full">
+      <Button
+        className="capitalize font-semibold text-base w-full tracking-wide"
+      >
+        {buttonText}
+      </Button>
+    </a>
+  </div>
+</div>

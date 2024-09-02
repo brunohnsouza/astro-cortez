@@ -1,0 +1,28 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { EvidencesCarousel } from "./evidences-carousel";
+
+const badgeContent = "Depoimentos";
+const titleContent = "Conheça as histórias de quem confiou em nossos cuidados";
+---
+
+<div class="mx-auto max-w-6xl px-4 space-y-16">
+  <div
+    class="flex flex-col items-center justify-center text-center gap-4 max-w-[600px] mx-auto"
+  >
+    <Badge
+      className="mx-auto md:mx-0 max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
+      variant="outline">{badgeContent}</Badge
+    >
+
+    <h2
+      class="text-3xl md:text-4xl capitalize text-foreground font-extrabold tracking-wide"
+    >
+      {titleContent}
+    </h2>
+  </div>
+
+  <div>
+    <EvidencesCarousel client:load />
+  </div>
+</div>

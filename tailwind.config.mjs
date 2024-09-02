@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   prefix: "",
   theme: {
+    fontFamily: {
+      sans: ["Nunito", "sans-serif"],
+    },
     container: {
       center: true,
       padding: "2rem",

@@ -1,9 +1,79 @@
 ---
+import Header from "@/components/header";
 import Layout from "../layouts/Layout.astro";
+import Home from "@/components/sections/home.astro";
+import MainServices from "@/components/sections/main-services.astro";
+import AboutUs from "@/components/sections/about-us.astro";
+import Services from "@/components/sections/services.astro";
+import Team from "@/components/sections/team.astro";
+import Faq from "@/components/sections/faq/faq.astro";
+import Contact from "@/components/sections/contact/contact.astro";
+import Footer from "@/components/footer.astro";
+import Evidences from "@/components/sections/evidences/evidences.astro";
 ---
 
-<Layout title="Início">
-  <div class="grid place-content-center min-h-screen">
-    <h1>Astro + React + Tailwind CSS + Shadcn/ui</h1>
+<Layout title="AmiVet | Cuidado completo para seus animais de estimação">
+  <Header client:load />
+
+  <div class="flex flex-col max-h-screen">
+    <main class="flex-1">
+      <section
+        id="home"
+        class="relative h-[800px] overflow-hidden bg-[#030711]/50 pt-[70px]"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          class="absolute inset-0 w-full h-full object-cover -z-10"
+        >
+          <source src="./sections/home/bg-home.mp4" type="video/mp4" />
+          <!-- OTHERS VIDEO FORMAT HERE -->
+          Desculpa, o seu navegador não suporta vídeos incorporados, mas você pode
+          <a href="./sections/home/bg-home.mp4">baixá-lo</a>
+          e assistir pelo seu reprodutor de mídia favorito!
+        </video>
+
+        <Home />
+      </section>
+
+      <section id="main-services" class="pb-36 -mt-14">
+        <MainServices />
+      </section>
+
+      <section id="about-us" class="min-h-[700px] grid place-content-center">
+        <AboutUs />
+      </section>
+
+      <section id="services" class="min-h-[700px] grid place-content-center">
+        <Services />
+      </section>
+
+      <section
+        id="team"
+        class="py-24 min-h-[700px] grid place-content-center bg-muted"
+      >
+        <Team />
+      </section>
+
+      <section id="evidences" class="min-h-[700px] grid place-content-center">
+        <Evidences />
+      </section>
+
+      <section id="faq" class="min-h-[700px] grid place-content-center">
+        <Faq />
+      </section>
+
+      <section
+        id="contact"
+        class="pb-32 min-h-[700px] grid place-content-center"
+      >
+        <Contact />
+      </section>
+    </main>
+
+    <footer class="py-24 bg-[#111827]">
+      <Footer />
+    </footer>
   </div>
 </Layout>

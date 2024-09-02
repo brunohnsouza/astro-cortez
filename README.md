@@ -18,6 +18,7 @@ Landing page desenvolvida para a clínica veterinária fictícia Amivet, com inf
 - **TypeScript**
 - **Tailwind CSS**
 - **Shadcn/ui**
+- **Zod**
 
 ## Instalação
 

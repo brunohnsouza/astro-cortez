@@ -4,7 +4,6 @@ import { Badge } from "../../ui/badge";
 import { ContactForm } from "./contact-form";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const badgeContent = "Contato";
 const titleContent = "Estamos prontos para te ajudar";
 const paragraphContent =
   "Entre em contato conosco para agendar uma consulta, tirar dúvidas ou saber mais sobre nossos serviços.";
@@ -28,44 +27,39 @@ const cardContent = [
 ];
 ---
 
-<div class="mx-auto max-w-6xl px-4 flex flex-col gap-y-16">
+<div class="mx-auto max-w-6xl px-4 flex flex-col gap-y-12">
   <div
-    class="flex flex-col items-center justify-center text-center gap-4 max-w-[600px] mx-auto"
+    class="flex flex-col items-center justify-center text-center gap-6 max-w-[600px] mx-auto"
   >
-    <Badge
-      className="mx-auto md:mx-0 max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
-      variant="outline">{badgeContent}</Badge
-    >
-
     <h2
-      class="text-3xl sm:text-4xl capitalize text-foreground font-extrabold tracking-wide"
+    class="text-3xl sm:text-4xl uppercase barlow-extrabold tracking-wider"
     >
-      {titleContent}
+    {titleContent}
     </h2>
 
-    <p class="text-secondary-foreground/70 tracking-wide">
+    <p class="work-sans-regular">
       {paragraphContent}
     </p>
   </div>
 
-  <div class="space-y-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="space-y-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         cardContent.map(({ icon: Icon, title, content }) => (
-          <Card className="shadow-none border-none bg-muted rounded-lg">
-            <CardHeader>
-              <div class="p-2 bg-primary w-max rounded-md">
-                <Icon className="size-5 text-[#f3f4f6] shrink-0" />
+          <Card className="bg-white border-none p-8 flex items-start gap-x-8 gap-y-4 rounded-none">
+            <CardHeader className="p-0">
+              <div class="p-3 w-max bg-darkVanilla rounded-md">
+                <Icon className="size-6 text-white shrink-0" />
               </div>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="p-0">
               <div class="space-y-0.5">
-                <p class="text-secondary-foreground/70 tracking-wide">
+                <h3 class="uppercase barlow-extrabold tracking-wider">
                   {title}
-                </p>
+                </h3>
 
-                <p class="text-secondary-foreground tracking-wide">{content}</p>
+                <p class="barlow-regular text-lg">{content}</p>
               </div>
             </CardContent>
           </Card>
@@ -73,10 +67,10 @@ const cardContent = [
       }
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31656393.254779518!2d-51.316680000000005!3d-14.40952615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1725018209007!5m2!1spt-BR!2sbr"
-        class="rounded-lg w-full h-full min-h-60"
+        class="w-full h-full min-h-60"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"

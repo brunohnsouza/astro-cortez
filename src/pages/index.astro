@@ -1,64 +1,54 @@
 ---
-import Header from "@/components/header";
 import Layout from "../layouts/Layout.astro";
 import Home from "@/components/sections/home.astro";
-import MainServices from "@/components/sections/main-services.astro";
+import InfoBox from "@/components/sections/info-box.astro";
 import AboutUs from "@/components/sections/about-us.astro";
 import Services from "@/components/sections/services.astro";
-import Team from "@/components/sections/team.astro";
-import Faq from "@/components/sections/faq/faq.astro";
 import Contact from "@/components/sections/contact/contact.astro";
 import Footer from "@/components/footer.astro";
-import Evidences from "@/components/sections/evidences/evidences.astro";
+import WhatsappWidget from "@/components/whatsapp-widget.astro";
+
+const titleContentParallax = "Experimente o Luxo dos Nossos Serviços de Barber Concierge";
+const buttonAppointmentText = "Marcar consulta";
 ---
 
-<Layout title="AmiVet | Cuidado completo para seus animais de estimação">
-  <Header client:load />
-
+<Layout title="Cortez | Barbearia e Salão de Beleza">
   <div class="flex flex-col max-h-screen">
     <main class="flex-1">
       <section
         id="home"
-        class="relative h-[800px] overflow-hidden bg-[#030711]/50 pt-[70px]"
+        class="relative h-[800px] bg-blackOpacity"
       >
-        <video
-          autoplay
-          muted
-          loop
-          class="absolute inset-0 w-full h-full object-cover -z-10"
-        >
-          <source src="./sections/home/bg-home.mp4" type="video/mp4" />
-          <!-- OTHERS VIDEO FORMAT HERE -->
-          Desculpa, o seu navegador não suporta vídeos incorporados, mas você pode
-          <a href="./sections/home/bg-home.mp4">baixá-lo</a>
-          e assistir pelo seu reprodutor de mídia favorito!
-        </video>
-
+        <img class="absolute inset-0 h-full w-full object-cover aspect-video -z-10" src="./sections/home/bg-home.jpg" alt="Background">
         <Home />
       </section>
 
       <section id="main-services" class="-mt-14">
-        <MainServices />
+        <InfoBox />
       </section>
 
       <section id="about-us" class="pt-24 grid place-content-center">
         <AboutUs />
       </section>
-
-      <section id="services" class="py-24 grid place-content-center">
+      
+      <section id="services" class="pt-24 grid place-content-center">
         <Services />
       </section>
 
-      <section id="team" class="py-24 grid place-content-center bg-muted">
-        <Team />
-      </section>
+      <section class="pt-24">
+        <div class="relative py-32 h-[400px] bg-blackOpacity">
+          <!-- <div class="absolute z-10 inset-0 bg-blackOpacity"></div> -->
+          <img class="absolute inset-0 h-full w-full object-cover aspect-video -z-10" src="./sections/home/bg-home.jpg" alt="Background">
 
-      <section id="evidences" class="pt-24 grid place-content-center">
-        <Evidences />
-      </section>
+          <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white gap-y-12 px-4">
+            <h2 class="max-w-xl text-3xl sm:text-4xl uppercase barlow-extrabold tracking-wider">{titleContentParallax}</h2>
 
-      <section id="faq" class="pt-24 grid place-content-center">
-        <Faq />
+            <a href="#contact" class="bg-darkVanilla px-8 py-4 uppercase 
+            border-2 border-darkVanilla text-black barlow-extrabold tracking-wider w-max mx-auto whitespace-nowrap">
+              {buttonAppointmentText}
+            </a>
+          </div>
+        </div>        
       </section>
 
       <section id="contact" class="py-24 grid place-content-center">
@@ -66,8 +56,8 @@ import Evidences from "@/components/sections/evidences/evidences.astro";
       </section>
     </main>
 
-    <footer class="py-24 bg-[#111827]">
-      <Footer />
-    </footer>
+    <Footer />
+
+    <WhatsappWidget />
   </div>
 </Layout>

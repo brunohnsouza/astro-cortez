@@ -1,6 +1,6 @@
-# AmiVet
+# Cortez
 
-Landing page desenvolvida para a clínica veterinária fictícia Amivet, com informações sobre a clínica, equipe, serviços, e um formulário de agendamento de consultas.
+Landing page desenvolvida para a barbearia Cortez, com informações sobre a barbearia, horários de atendimento, serviços oferecidos, e um formulário para agendamento de consultas.
 
 ![Preview](.github/preview.png)
 
@@ -27,8 +27,8 @@ Siga as etapas abaixo para configurar e instalar o creator.ai em seu ambiente lo
 1. Clone o repositório e acesse o diretório:
 
 ```bash
-git clone git@github.com:brunohnsouza/astro-amivet.git
-cd astro-amivet
+git clone git@github.com:brunohnsouza/astro-cortez.git
+cd astro-cortez
 ```
 
 2. Instale as dependências do projeto:
@@ -47,11 +47,11 @@ Acesse http://localhost:4321 para visualizar a aplicação.
 
 ## Funcionalidades
 
-- **Informações da Clínica:** Seção com a história e missão da Amivet.
-- **Equipe:** Apresentação dos veterinários e especialistas da clínica.
-- **Principais Serviços:** Lista dos principais serviços oferecidos pela Amivet.
-- **Formulário de Agendamento:** Interface para marcar consultas diretamente pela landing page.
-- **Design Responsivo:** Layout otimizado para dispositivos móveis, tablets e desktops.
+- **Informações da Barbearia**: Seção com a história e filosofia da barbearia Cortez.
+- **Horários de Atendimento**: Exibição clara dos dias e horários de funcionamento.
+- **Principais Serviços**: Lista dos serviços exclusivos oferecidos pela Cortez, como cortes de cabelo, barba e serviços de concierge.
+- **Formulário de Agendamento**: Interface simples e prática para agendar consultas diretamente pela landing page.
+- **Design Responsivo**: Layout otimizado para dispositivos móveis, tablets e desktops, garantindo uma experiência fluida em todas as plataformas.
 
 ## Licença
 

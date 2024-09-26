@@ -1,35 +1,33 @@
 ---
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
-
-const badgeContent = "Bem-vindo à AmiVet";
-const titleContent = "Cuidado excepcional para os seus melhores amigos";
+const titleContent = "Cuidado excepcional para o seu estilo";
 const paragraphContent =
-  "Na nossa clínica veterinária, estamos dedicados a oferecer cuidados excepcionais para garantir que seus amados companheiros tenham uma vida saudável e feliz.";
-const buttonText = "Marcar consulta";
+  "Na nossa barbearia, estamos dedicados a oferecer cortes e cuidados de alta qualidade para garantir que você sempre tenha um visual elegante e moderno.";
+
+const buttonAppointmentText = "Marcar consulta";
+const buttonBrowseServicesText = "Ver serviços";
 ---
 
-<div class="mx-auto max-w-6xl px-4 flex flex-col gap-y-6 h-full justify-center">
-  <Badge
-    className="max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
-    variant="outline">{badgeContent}</Badge
-  >
-
+<div class="mx-auto max-w-6xl px-4 flex flex-col gap-y-6 h-full justify-end pb-36 text-center items-center">
   <h1
-    class="text-4xl sm:text-5xl md:text-6xl max-w-full md:max-w-[800px] text-[#f3f4f6] tracking-wide font-extrabold"
+    class="text-4xl sm:text-5xl md:text-6xl max-w-full md:max-w-[800px] text-white uppercase barlow-black"
   >
     {titleContent}
   </h1>
 
   <p
-    class="nunito-regular max-w-full md:max-w-[700px] text-base sm:text-lg text-[#f3f4f6]/70 mx-auto md:mx-0 tracking-wide"
+    class="work-sans-medium max-w-full md:max-w-[700px] text-base sm:text-lg text-white mx-auto md:mx-0"
   >
     {paragraphContent}
   </p>
 
-  <a href="#contact" class="w-full sm:w-max">
-    <Button className="capitalize font-semibold text-base w-full tracking-wide">
-      {buttonText}
-    </Button>
-  </a>
+  <div class="flex flex-col md:flex-row items-center gap-x-6 gap-y-3">
+    <a href="#contact" class="bg-darkVanilla px-8 py-4 uppercase 
+    border-2 border-darkVanilla barlow-extrabold tracking-wider w-full whitespace-nowrap">
+      {buttonAppointmentText}
+    </a>
+
+    <a href="#services" class="bg-transparent border-2 border-white text-white px-8 py-4 uppercase barlow-extrabold tracking-wider w-full whitespace-nowrap">
+      {buttonBrowseServicesText}
+    </a>
+  </div>
 </div>

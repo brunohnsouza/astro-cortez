@@ -1,79 +1,105 @@
 ---
-import { CircleCheckBig } from "lucide-react";
+import CombScissors from "@/icons/services/comb-scissors";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import Comb from "@/icons/services/comb";
+import BeardMachine from "@/icons/services/beard-machine";
+import CuttingBlade from "@/icons/services/cutting-blade";
+import Moisturizer from "@/icons/services/moisturizer";
+import Beard from "@/icons/services/beard";
+import { Card, CardHeader, CardContent } from "../ui/card";
 
-const badgeContent = "Serviços";
-const titleContent = "Assista ao vídeo e veja em detalhes os nossos serviços";
-const listServices = [
-  "Consultas de Bem-Estar",
-  "Vacinação e Desparasitação",
-  "Atendimento Especializado em Nutrição",
-  "Cirurgia e Procedimentos Médicos",
+
+const titleContent = "Explore Nossos Serviços de Barbearia";
+const paragraphContent =
+  "Oferecemos uma variedade de serviços de alta qualidade, realizados por profissionais dedicados e apaixonados por criar estilos únicos para cada cliente.";
+
+  const services = [
+  {
+    icon: CombScissors,
+    titleContent: "Corte de cabelo adulto",
+    paragraphContent: "Estilo e elegância para homens modernos.",
+    priceService: "R$ 20,00",
+  },
+  {
+    icon: Comb,
+    titleContent: "Corte de cabelo infantil",
+    paragraphContent: "Estilo e elegância para garotos modernos.",
+    priceService: "R$ 15,00",
+  },
+  {
+    icon: BeardMachine,
+    titleContent: "Corte de barba",
+    paragraphContent: "Estilo e elegância para homens modernos.",
+    priceService: "R$ 10,00",
+  },
+  {
+    icon: CuttingBlade,
+    titleContent: "Barbear o pescoço",
+    paragraphContent: "Estilo e elegância para homens modernos.",
+    priceService: "R$ 5,00",
+  },
+  {
+    icon: Moisturizer,
+    titleContent: "Hidratação do cabelo",
+    paragraphContent: "Estilo e elegância para homens modernos.",
+    priceService: "R$ 10,00",
+  },
+  {
+    icon: Beard,
+    titleContent: "Tratamento de barba",
+    paragraphContent: "Estilo e elegância para homens modernos.",
+    priceService: "R$ 10,00",
+  },
 ];
-const buttonText = "Marcar consulta";
-
-const videoSrc = "./sections/services/video.mp4";
+const buttonAppointmentText = "Marcar consulta";
 ---
 
 <div
-  class="mx-auto max-w-6xl px-4 grid items-start grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16"
+  class="mx-auto max-w-6xl px-4 flex flex-col gap-y-12"
 >
-  <div class="flex flex-col items-start justify-center gap-4">
-    <Badge
-      className="max-w-max font-bold text-primary uppercase bg-background text-xs shadow-md tracking-wide"
-      role="status"
-      variant="outline">{badgeContent}</Badge
-    >
-
+  <div
+  class="flex flex-col items-center justify-center text-center gap-6 max-w-[600px] mx-auto"
+  >
     <h2
-      class="text-3xl sm:text-4xl capitalize text-foreground font-extrabold tracking-wide"
+      class="text-3xl sm:text-4xl uppercase barlow-extrabold tracking-wider"
     >
       {titleContent}
     </h2>
 
-    <ul class="flex flex-col justify-start w-full gap-y-4 my-4">
-      {
-        listServices.map((service) => (
-          <li class="flex items-center gap-2">
-            <CircleCheckBig
-              className="size-5 text-primary shrink-0"
-              aria-hidden="true"
-            />
-            <span class="text-secondary-foreground/70 tracking-wide">
-              {service}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
-
-    <a href="#contact" class="w-full">
-      <Button
-        className="capitalize font-semibold text-base w-full tracking-wide"
-      >
-        {buttonText}
-      </Button>
-    </a>
+    <p class="work-sans-regular">
+      {paragraphContent}
+    </p>
   </div>
 
-  <!-- <iframe
-        class="rounded-lg border aspect-video min-h-80 w-full object-cover"
-        src=""
-        title=""
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-    ></iframe> -->
+  <div class="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      services.map(({ icon: Icon, titleContent, paragraphContent, priceService }) => (
+        <Card className="bg-white border-none p-8 flex items-start justify-center gap-x-8 rounded-none">
+          <CardHeader className="p-0">
+            <Icon className="shrink-0" />
+          </CardHeader>
 
-  <video
-    controls
-    class="rounded-lg aspect-video border min-h-80 w-full object-cover"
-  >
-    <source src={videoSrc} type="video/mp4" />
-    <!-- Outros formatos de vídeo podem ser adicionados aqui -->
-    Desculpe, o seu navegador não suporta vídeos incorporados, mas você pode
-    <a href={videoSrc}>baixá-lo</a>
-    e assistir pelo seu reprodutor de mídia favorito!
-  </video>
+          <CardContent className="p-0 space-y-2">
+            <h3 class="text-2xl barlow-extrabold tracking-wider">{titleContent}</h3>
+              {
+                Array.isArray(paragraphContent) ? (
+                  paragraphContent.map((paragraph) => (
+                    <p class="tracking-wider work-sans-regular">{paragraph}</p>
+                  ))
+                ) : (
+                  <p class="tracking-wider work-sans-regular">{paragraphContent}</p>
+                )
+              }
+              <span class="inline-block text-2xl tracking-wider barlow-extrabold">{priceService}</span>
+          </CardContent>
+        </Card>
+      ))
+    }
+  </div>
+
+  <a href="#contact" class="bg-darkVanilla px-8 py-4 uppercase 
+    border-2 border-darkVanilla w-max mx-auto barlow-extrabold tracking-wider whitespace-nowrap">
+      {buttonAppointmentText}
+  </a>
 </div>

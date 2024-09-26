@@ -1,132 +1,57 @@
 ---
-import { ArrowUpRight, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Separator } from "./ui/separator";
+import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
-const logoName = "AmiVet";
+const currentYear = String(new Date().getFullYear());
 
-const titleContent = "Cuidado excepcional para os seus melhores amigos";
-const paragraphContent =
-  "Na nossa clínica veterinária, estamos dedicados a oferecer cuidados excepcionais para garantir que seus amados companheiros tenham uma vida saudável e feliz.";
-
-const socialMedia = [
+export const devLinks = [
   {
-    icon: Instagram,
     url: "#",
-  },
-  {
-    icon: Facebook,
-    url: "#",
-  },
-  {
     icon: Linkedin,
+    iconName: "Linkedin",
+  },
+  {
     url: "#",
+    icon: Instagram,
+    iconName: "Instagram",
+  },
+  {
+    url: "#",
+    icon: Facebook,
+    iconName: "Facebook",
+  },
+  {
+    url: "#",
+    icon: Twitter,
+    iconName: "Twitter",
   },
 ];
 
-const pages = [
-  {
-    title: "Início",
-    href: "#home",
-  },
-  {
-    title: "Sobre nós",
-    href: "#about-us",
-  },
-  {
-    title: "Serviços",
-    href: "#services",
-  },
-  {
-    title: "Equipe",
-    href: "#team",
-  },
-  {
-    title: "Depoimentos",
-    href: "#evidences",
-  },
-  {
-    title: "FAQ",
-    href: "#faq",
-  },
-  {
-    title: "Contato",
-    href: "#contact",
-  },
-];
 
-const year = new Date().getFullYear();
-const copyRight = "Todos os direitos reservados.";
 ---
 
-<div class="mx-auto max-w-6xl px-4 flex flex-col gap-y-16">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-    <div class="flex flex-col gap-y-8">
-      <a href="#home" class="flex items-center gap-x-2 max-w-max">
-        <img src="/logo.svg" alt={`Logo da clínica ${logoName}`} />
-        <span
-          class="text-xl md:text-2xl text-[#f3f4f6] font-extrabold tracking-wide"
-        >
-          {logoName}
-        </span>
-      </a>
-
-      <div class="flex flex-col gap-y-2 md:w-4/5">
-        <h2
-          class="text-lg font-semibold tracking-wide text-[#f3f4f6] capitalize"
-        >
-          {titleContent}
-        </h2>
-        <p class="text-[#f3f4f6]/70 tracking-wide">
-          {paragraphContent}
-        </p>
-      </div>
-
-      <ul class="flex items-center gap-x-3">
-        {
-          socialMedia.map(({ url, icon: Icon }) => (
-            <li>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block bg-muted-foreground/20 p-2 rounded-lg hover:bg-primary transition-colors"
-              >
-                <Icon className="size-5 text-[#f3f4f6]" />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-
-    <nav>
-      <ul class="flex flex-col gap-y-4">
-        {
-          pages.map(({ title, href }) => (
-            <li>
-              <a
-                href={href}
-                class="flex items-center gap-x-2 text-[#f3f4f6] hover:brightness-90 transition whitespace-nowrap max-w-max"
-              >
-                {title}
-                <ArrowUpRight className="size-5 text-primary shrink-0" />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
-
-  <Separator className="bg-muted-foreground/20" />
-
-  <div class="flex flex-col sm:flex-row gap-y-2 items-center justify-between">
-    <p class="text-[#f3f4f6]/50 tracking-wide">
-      {year} &copy; {logoName}
+<footer class="w-full bg-black">
+  <div
+    class="mx-auto max-w-6xl px-4 py-8 flex flex-col gap-y-4 sm:flex-row items-center justify-between"
+  >
+    <p class="work-sans-regular text-center text-white">
+      ©<span class="mx-2">{currentYear}</span>Cortez. Todos os direitos
+      reservados.
     </p>
 
-    <p class="text-[#f3f4f6]/50 tracking-wide">
-      {copyRight}
-    </p>
+    <ul class="flex items-center gap-x-3">
+      {
+        devLinks.map(({ icon: IconComponent, url }) => (
+          <li>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon">
+                <IconComponent className="shrink-0 text-white" size={24} />
+                <span class="sr-only">{`ícone ${IconComponent}`}</span>
+              </Button>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
-</div>
+</footer>

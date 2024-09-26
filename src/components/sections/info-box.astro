@@ -1,0 +1,56 @@
+---
+import { PhoneCall, MapPin, Clock } from "lucide-react";
+import { Card, CardHeader, CardContent } from "../ui/card";
+
+const infoBoxes = [
+  {
+    icon: MapPin,
+    titleContent: "Endereço",
+    paragraphContent: "Rua dos Cortes, 987, Centro, Recife - PE, Brasil",
+  },
+  {
+    icon: PhoneCall,
+    titleContent: "Telefone",
+    paragraphContent: [
+      "+55 (81) 98877-1234",
+      "+55 (81) 98877-5678",
+    ]
+  },
+  {
+    icon: Clock,
+    titleContent: "Horário",
+    paragraphContent: [
+      "Seg – Sáb: 9h – 20h",
+      "Dom: 10h – 18h",
+    ]
+  },
+];
+---
+
+<div
+  class="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+>
+  {
+    infoBoxes.map(({ icon: Icon, titleContent, paragraphContent }) => (
+      <Card className="bg-white z-10 p-8 space-y-6 rounded-none text-center border-none">
+        <CardHeader className="p-0 flex flex-col items-center">
+          <Icon className="size-10 md:size-12 shrink-0" />
+
+          <span class="text-xl md:text-2xl pb-1 barlow-extrabold tracking-wider border-b-4 border-darkVanilla">{titleContent}</span>
+        </CardHeader>
+
+        <CardContent className="p-0">
+            {
+              Array.isArray(paragraphContent) ? (
+                paragraphContent.map((paragraph) => (
+                  <p class="tracking-wider uppercase text-base md:text-lg barlow-bold">{paragraph}</p>
+                ))
+              ) : (
+                <p class="tracking-wider uppercase text-base md:text-lg barlow-bold">{paragraphContent}</p>
+              )
+            }
+        </CardContent>
+      </Card>
+    ))
+  }
+</div>

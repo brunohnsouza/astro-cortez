@@ -11,6 +11,10 @@ Landing page desenvolvida para a barbearia Cortez, com informações sobre a bar
 - [Funcionalidade](#funcionalidades)
 - [Licença](#licença)
 
+## Demonstração
+
+https://github.com/user-attachments/assets/b7aa6948-6c9a-4b77-a77d-a2be0567e3b9
+
 ## Ferramentas
 
 - **Astro**
